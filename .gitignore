@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.eval-tmp/
+eval/.venv
+eval/cache.jsonl
+.env.local

@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FwdMD
 
-## Getting Started
+Fact-check health WhatsApp forwards (English, Hindi, Bengali, Hinglish; text or screenshot) against a small evidence pack of WHO / ICMR / MoHFW / NCDC / PIB Fact Check sources, and get a kind reply to send back in the same language.
 
-First, run the development server:
+Not medical advice.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Run
+
+Create `.env.local` with:
+
+```
+ANTHROPIC_API_KEY=...
+CLAUDE_MODEL=claude-opus-5-5   # optional, this is the default
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev                  # http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## How it works
 
-## Learn More
+- `POST /api/check` (`app/api/check/route.ts`) sends the forward (and optional screenshot) plus the whole evidence pack (`data/evidence.json`) to Claude with a zod structured-output schema.
+- The server drops any cited evidence id that isn't in the pack and downgrades a TRUE/FALSE/MISLEADING claim with no valid evidence to UNVERIFIED (`lib/sanitize.ts`).
+- One retry on a schema failure, then a friendly error.
+- No database, no auth, nothing stored.
 
-To learn more about Next.js, take a look at the following resources:
+## Checks
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+node --test tests/sanitize.test.ts
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Evidence URLs marked `"url_confidence": "check"` are listed in [docs/evidence_to_verify.md](docs/evidence_to_verify.md).
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Import the repo in Vercel and set `ANTHROPIC_API_KEY` (and optionally `CLAUDE_MODEL`) in the project's environment variables.
