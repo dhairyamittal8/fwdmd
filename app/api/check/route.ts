@@ -56,8 +56,6 @@ async function askClaude(client: Anthropic, content: BetaContentBlockParam[]) {
   const res = await client.beta.messages.parse({
     model: MODEL,
     max_tokens: 8000,
-    betas: ["server-side-fallback-2026-07-01"],
-    fallbacks: "default", // retry on another model if a safety classifier refuses
     system: [{ type: "text", text: SYSTEM, cache_control: { type: "ephemeral" } }],
     messages: [{ role: "user", content }],
     output_config: { format: betaZodOutputFormat(ModelOutput) },

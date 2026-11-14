@@ -6,7 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint --ignore-pattern 'eval/**' --ignore-pattern '.eval-tmp/**'"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.8.0",
