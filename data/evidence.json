@@ -93,10 +93,10 @@
     "keywords": ["covid", "corona", "cow urine", "gaumutra", "gomutra", "cow dung", "gobar", "गोमूत्र", "गोबर", "গোমূত্র"],
     "verdict": "FALSE",
     "fact": "There is no scientific evidence that cow urine or cow dung prevents or cures COVID-19. Approved vaccines and proper medical care are the proven protections.",
-    "source_org": "MoHFW",
-    "source_title": "Ministry of Health and Family Welfare, Government of India",
-    "source_url": "https://www.mohfw.gov.in/",
-    "url_confidence": "check"
+    "source_org": "WHO",
+    "source_title": "WHO: COVID-19 advice for the public — Mythbusters",
+    "source_url": "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters",
+    "url_confidence": "high"
   },
   {
     "id": "covid-steam",
@@ -104,10 +104,10 @@
     "keywords": ["covid", "corona", "steam", "bhaap", "bhap", "भाप", "ভাপ", "করোনা"],
     "verdict": "FALSE",
     "fact": "There is no scientific evidence that steam inhalation kills the virus that causes COVID-19. It can cause burns if done carelessly.",
-    "source_org": "PIB Fact Check",
-    "source_title": "Press Information Bureau, Government of India (PIB Fact Check)",
-    "source_url": "https://pib.gov.in/",
-    "url_confidence": "check"
+    "source_org": "WHO",
+    "source_title": "WHO: COVID-19 advice for the public — Mythbusters",
+    "source_url": "https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public/myth-busters",
+    "url_confidence": "high"
   },
   {
     "id": "covid-5g",
@@ -149,9 +149,9 @@
     "verdict": "FALSE",
     "fact": "There is no evidence that any vaccine, including COVID-19 vaccines, causes fertility problems in women or men. Approved COVID-19 vaccines went through safety testing and continue to be monitored.",
     "source_org": "WHO",
-    "source_title": "WHO Q&A: Coronavirus disease (COVID-19): Vaccines",
+    "source_title": "WHO: COVID-19 vaccines — questions and answers",
     "source_url": "https://www.who.int/news-room/questions-and-answers/item/coronavirus-disease-(covid-19)-vaccines",
-    "url_confidence": "check"
+    "url_confidence": "high"
   },
   {
     "id": "covid-vaccine-microchip",
@@ -160,9 +160,9 @@
     "verdict": "FALSE",
     "fact": "Vaccines do not contain microchips or metals that make the body magnetic. Their ingredients are listed and checked by regulators.",
     "source_org": "WHO",
-    "source_title": "WHO Q&A: Coronavirus disease (COVID-19): Vaccines",
+    "source_title": "WHO: COVID-19 vaccines — questions and answers",
     "source_url": "https://www.who.int/news-room/questions-and-answers/item/coronavirus-disease-(covid-19)-vaccines",
-    "url_confidence": "check"
+    "url_confidence": "high"
   },
   {
     "id": "vaccine-autism",
