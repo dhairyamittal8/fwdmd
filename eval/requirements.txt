@@ -1,0 +1,5 @@
+datasets<3
+anthropic
+pandas
+scikit-learn
+matplotlib
